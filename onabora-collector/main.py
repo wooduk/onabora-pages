@@ -27,7 +27,7 @@ class MainHandler(webapp2.RequestHandler):
         
         to_address = "sgwooduk@gmail.com"        
         sender_address = "sgwooduk@gmail.com"
-        subject = "email address received"
+        subject = "ONABORA_ROBOT_SAY: email address received"
         body = """
                 Dear Stephen,
                     I collected another email address:
