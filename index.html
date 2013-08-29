@@ -10,8 +10,11 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+				
     <link href="css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
+    
+	<style type="text/css">
       body {
         padding-top: 20px;
         padding-bottom: 40px;
@@ -29,6 +32,7 @@
       /* Main marketing message and sign up button */
       .jumbotron {
         margin: 60px 0;
+		text-align:center;
       }
       .jumbotron h1 {
 		  font-family:"Open Sans";
@@ -55,7 +59,7 @@
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
     <![endif]-->
-
+		
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
@@ -69,44 +73,54 @@
     <div class="container-narrow">
 
       <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="muted">onabora</h3>
-      </div>
+    	<div style="text-align:center">
+			<h3 style="font-family:'Open Sans';font-weight:300"><img src='logo.png' width=100px height=100px</img></h3>
+		</div>
+	</div>
 
       <hr>
 
-      <div class="jumbotron">
-        <h1>We make the web better by enabling sustainable digital products.</h1>
-        <p class="lead" style="padding-top:16px">We provide bespoke solutions to help organisations understand and manage the environmental impacts of their web products.</p>
-        
+      <div class="jumbotron" >
+        <h1>We help organisations create sustainable digital products.</h1>
+        <p class="lead" style="padding-top:16px; max-width:80%; margin:auto">Tools and bespoke solutions to help organisations understand and manage the environmental impacts of their web products.</p>
+  	 
+	 	<div style="margin:5em">
+			<!-- Button to trigger modal -->
+			<a href="#myModal" role="button" class="btn btn-primary btn-large" data-toggle="modal">Find out more</a>
+			
+		</div>
+		
+		<div id="myModal" class="modal hide fade">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<div style="text-align:left"><h3>How can we reach you?</h3></div>
+		  </div>
+		  <div class="modal-body" style="text-align:left">
+		    <p style="margin-top:1em">Please enter your email address so we can send you some more information about our services. It won't be used for any other purpose.</p>
+			<div style="margin-top:2em">
+				<form id="modal-form" method="post">
+						<label><img src="mail-icon.png" width=48px; height=48px></img> <input style="margin-top:0.5em" id="email_address" type="email" value="you@example.com" onfocus="if (this.value=='you@example.com') this.value='';"/></label>
+					</form>
+			</div>
+		  
+		  </div>
+		  <div class="modal-footer">  
+			<!-- ><input type="submit" value="Send" name="modal-form-submit" class="btn btn-success .btn-small" data-dismiss="modal"></input>-->
+            <a id="modal-form-submit" href="" class="btn btn-primary" data-dismiss="modal">Save changes</a>
+		  </div>
+		   </div>
       </div>
+	  
+	 
 
-      <hr>
+	 
+	  
+	  <hr>
 	  
 	  
 
-      <div class="row-fluid marketing">
-        <div class="span6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          
-        </div>
-
-        <div class="span6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          
-        </div>
-      </div>
-
-      <hr>
-
-      <div class="footer">
+      
+      <div class="footer" style="text-align:center	">
         <p>&copy; Onabora 2013</p>
       </div>
 
@@ -115,20 +129,26 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap-transition.js"></script>
-    <script src="js/bootstrap-alert.js"></script>
-    <script src="js/bootstrap-modal.js"></script>
-    <script src="js/bootstrap-dropdown.js"></script>
-    <script src="js/bootstrap-scrollspy.js"></script>
-    <script src="js/bootstrap-tab.js"></script>
-    <script src="js/bootstrap-tooltip.js"></script>
-    <script src="js/bootstrap-popover.js"></script>
-    <script src="js/bootstrap-button.js"></script>
-    <script src="js/bootstrap-collapse.js"></script>
-    <script src="js/bootstrap-carousel.js"></script>
-    <script src="js/bootstrap-typeahead.js"></script>
-
+	
+	<script>
+		$('#modal-form-submit').on('click', function(e){
+		// We don't want this to act as a link so cancel the link action
+		e.preventDefault();
+		// Find form and submit it
+	    
+		  $.post('http://onabora-collector.appspot.com/', 
+		     {"email_address": $('#email_address').val()},
+		     function(data, status, xhr){
+		       // do something here with response;
+		     });
+	  	});
+	</script>
+	
+  	
+    <script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	
+ 
   </body>
 </html>
 	
