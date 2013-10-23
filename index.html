@@ -84,45 +84,56 @@
 
     <div class="container-narrow">
 		<a name="pagetop"></a>
-      <div class="masthead">
-    	<div style="text-align:center">
-			<h3 style="font-family:'Open Sans';font-weight:300"><img src='r_logo.png' width=100px height=100px</img></h3>
-		</div>
-	</div>
-
-      <hr>
-
-      <div class="jumbotron" >
-		  <div style="max-width:80%;margin:auto">
-        <h1>We help people create sustainable digital products</h1>
-	</div>
-        <p class="lead" style="padding-top:16px; max-width:80%; margin:auto">Providing tools and bespoke solutions to help you understand and manage the environmental impacts of what you put on the web.</p>
-  	 
-	 	<div style="margin:5em">
-			<!-- Button to trigger modal -->
-			<a href="#myModal" role="button" class="btn btn-primary btn-large" data-toggle="modal">Find out more</a>
-			
-		</div>
-		
-		<div id="myModal" class="modal hide fade">
-		  <div class="modal-header">
-		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			<div style="text-align:left"><h3>How can we reach you?</h3></div>
-		  </div>
-		  <div class="modal-body" style="text-align:left">
-		    <p style="margin-top:1em">Please enter your email address so we can send you some more information about our services. It won't be used for any other purpose.</p>
-			<div style="margin-top:2em">
-				<form id="modal-form" method="post" onkeypress="return event.keyCode != 13;">
-						<label><img src="mail-icon.png" width=48px; height=48px></img> <input style="margin-top:0.5em" id="email_address" type="email" value="you@example.com" onfocus="if (this.value=='you@example.com') this.value='';"/></label>
-					</form>
+		<div class="masthead">
+    		<div style="text-align:center">
+				<h3 style="font-family:'Open Sans';font-weight:300"><img src='img/r_logo.png' width='100px' height='100px'></img></h3>
 			</div>
-		  
-		  </div>
-		  <div class="modal-footer">  
-			<!-- ><input type="submit" value="Send" name="modal-form-submit" class="btn btn-success .btn-small" data-dismiss="modal"></input>-->
-            <a id="modal-form-submit" href="#pagetop" class="btn btn-success" data-dismiss="modal">Send</a>
-		  </div>
-		   </div>
+		</div>
+
+		<hr>
+		
+		<div class="jumbotron" >
+			<div style="max-width:80%;margin:auto">
+				<h1>We help people create sustainable digital products</h1>
+			</div>
+			
+			<p class="lead" style="padding-top:16px; max-width:80%; margin:auto">Providing tools and bespoke solutions to help you understand and manage the environmental impacts of what you put on the web.</p>
+  	 
+			<div style="margin:5em">
+				<!-- Button to trigger modal -->
+				<a href="#myModal" role="button" class="btn btn-primary btn-large" data-toggle="modal">Find out more</a>
+			</div>
+			
+			<a href="https://twitter.com/onabora" class="twitter-follow-button" data-show-count="false">Follow @onabora</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      	
+		
+			<div id="myModal" class="modal hide fade">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<div style="text-align:left"><h3>Great. How can we reach you?</h3></div>
+				</div>
+			
+				<div class="modal-body" style="text-align:left">
+					<p style="margin-top:1em">We are currently working hard in a closed alpha phase and all spaces are filled. Please enter your email address so we can let you know when a space becomes available. It won't be used for any other purpose.</p>
+					<div style="margin-top:2em">
+						<form id="modal-form" method="post" onkeypress="return event.keyCode != 13;">
+							<label><img src="mail-icon.png" width=48px; height=48px></img> <input style="margin-top:0.5em" id="email_address" type="email" value="you@example.com" onfocus="if (this.value=='you@example.com') this.value='';"/></label>
+						</form>
+						<a href='#'>Got an invite code?</a>
+				  
+					</div>
+					
+				</div>
+	  		    <div class="modal-footer">  
+	  			<!-- ><input type="submit" value="Send" name="modal-form-submit" class="btn btn-success .btn-small" data-dismiss="modal"></input>-->
+				
+				 <a id="modal-form-submit" href="#pagetop" class="btn btn-success" data-dismiss="modal">Send</a>
+	  		  </div>
+			</div>
+				
+			
+			</div>
       </div>
 	  
 	 
@@ -136,6 +147,7 @@
       
       <div class="footer" style="text-align:center	">
         <p>&copy; Onabora 2013</p>
+		
       </div>
 
     </div> <!-- /container -->
@@ -143,7 +155,7 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-	
+	<script type="text/javascript" src="js/sniffer.js"></script>
 	<script>
 		$('#modal-form-submit').on('click', function(e){
 		// We don't want this to act as a link so cancel the link action
@@ -156,6 +168,19 @@
 		       // do something here with response;
 		     });
 	  	});
+		$('#live-modal-form-submit').on('click', function(e){
+		// We don't want this to act as a link so cancel the link action
+		e.preventDefault();
+		// Find form and submit it
+	    
+		  $.post('http://onabora-collector.appspot.com/', 
+		     {"email_address": $('#email_address').val()},
+		     function(data, status, xhr){
+		       // do something here with response;
+		     });
+	  	});
+		
+			
 	</script>
 	
 	<script src="js/bootstrap.min.js"></script>
