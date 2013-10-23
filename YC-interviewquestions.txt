@@ -1,0 +1,45 @@
+--------------------------------------
+ The Y combinator interview questions
+--------------------------------------
+
+Who needs what you’re making?
+
+Any organisation with a significant digital presence and who considers environmental responsibility to be important to sustaining their business.
+
+
+How do you know they need it? (Need to source evidence that their customers or peers are concenred about this issue and that it relates to integrity).
+
+From my experience at cross sector initiatives in the media industry: it was common for representatives of different organisations to say that the problem was that they had no real means of measuring / understanding the significance of the environmental impact. 
+
+What are they doing now? They are either brushing over that digital has a environmental consequence. Taking part in iniatives to discuss what to do. Using an industry body provided tool for compiling information. Using thier own in house spreadsheets and doing leg work around thier company collecting required data.
+
+
+What, exactly, makes you different from existing options? We make it easy for these companies to measure thier own impacts and be confident in the numbers. We focus on the total emissions picture which includes user's devices. Our solution ties in with thier existing tools for understanding users allowing this information to be monitored continually.
+
+
+Why isn’t someone already doing this? Awareness of the issue, insight that user devices are the important part from an environmental perspective.
+
+What obstacles will you face and how will you overcome them? Access to analytics - archtecture that allows companies to keep that info.
+
+How will customers and/or users find out about you? Attend events raising awareness of the issue.
+
+What resistance will they have to trying you? 
+
+How will you overcome that resistance?
+
+What are the key things about your field that outsiders don’t understand?
+
+What part of your project are you going to build first?
+
+Who is going to be your first paying customer?
+
+If your startup succeeds, what additional areas might you be able to expand into?
+
+Why did you choose this idea?
+
+What have you learned so far from working on it?
+
+Six months from now, what’s going to be your biggest problem?
+
+Have you considered various mutations of your idea?
+
